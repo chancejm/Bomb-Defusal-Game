@@ -1,0 +1,140 @@
+html{
+    background: black;
+    color: white;
+    font-size: 1.6vw;
+}
+div{
+    border: 1px dotted forestgreen;
+}
+bombImg{
+    position: relative;
+    
+}
+
+#startBtn{
+    position: absolute;
+    background: grey;
+    /* top: 51.5%;
+    left: 42%;
+    height: 10%;
+    width: 16%; */
+}
+#win{
+    position: absolute;
+    background: black;
+    top: 88%;
+    left: 8%;
+    color: green;
+    font-size: 2vw;
+    box-shadow: 3px 3px green;
+}
+#lose{
+    position: absolute;
+    background: black;
+    top: 88%;
+    left: 82%;
+    color: #cf3d39;
+    border: 1px dotted #cf3d39;
+    font-size: 2vw;
+    box-shadow: 3px 3px #cf3d39;
+}
+#numToGuess{
+    position: absolute;
+    text-align: center;
+    font-size: 4vw;
+    color: #cf3d39;
+    background: black;
+    top: 51.5%;
+    left: 42%;
+    height: 10%;
+    width: 16%;
+    border: 1px dotted #cf3d39;
+}
+#currentScore{
+    position: absolute;
+    text-align: center;
+    font-size: 3vw;
+    color: green;
+    background: black;
+    top: 63.4%;
+    left: 43%;
+    height: 8%;
+    width: 14%;
+}
+#timer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.4vw;
+    text-align: center;
+    color: #cf3d39;
+    border: 1px solid black;
+    position: absolute;
+    background: black;
+    top: 31%;
+    left: 32.4%;
+    height: 5.4%;
+    width: 11%;
+}
+#startBtn:hover{
+    background: lightgrey;
+    border: 3px solid black;
+}
+#btnOne:hover{
+    background: #3dadf4;
+    border: 3px solid black;
+    
+}
+#btnTwo:hover{
+    background: #79fb52;
+    border: 3px solid black;
+}
+#btnThree:hover{
+    background: #ff494d;
+    border: 3px solid black;
+}
+#btnFour:hover{
+    background: #fddf4e;
+    border: 3px solid black;
+}
+.btn{
+    position: absolute;
+    top: 83%;
+    
+}
+#btnOne {
+    position: absolute;
+    height: 9%;
+    width: 7%;
+    background: blue;
+    top: 82%;
+    left: 27.5%;
+    border: 1px solid darkgray;
+    
+    
+}
+#btnTwo {
+    position: absolute;
+    height: 9%;
+    width: 7%;
+    background: green;
+    top: 82%;
+    left: 40%;
+    border: 1px solid darkgray;
+}
+#btnThree {
+    position: absolute;
+    height: 9%;
+    width: 7%;
+    background: red;
+    top: 82%;
+    left: 52.3%;
+    border: 1px solid darkgray;
+}
+#btnFour {
+    position: absolute;
+    height: 9%;
+    width: 7%;
+    background: yellow;
+    top: 82%;
+    left: 64.8%;
+    border: 1px solid darkgray;
+}
