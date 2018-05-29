@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+    
+// -----------------------------------------start--------------------------------------- \\
 let countdown = false;
 let timer = false;
 let time = ""
@@ -22,6 +26,11 @@ function start() {
     } else {
         $('#numToGuess').html(numToGuess);
     };
+    $('#currentScore').css("border", "1px dotted green");
+    $('#currentScore').css("color", "green");
+    $('#numToGuess').css("border", "1px dotted #cf3d39");
+    $('#numToGuess').css("color", "#cf3d39");
+    getScore();
     console.log(numToGuess);
     console.log(blueBtn);
     console.log(greenBtn);
@@ -93,44 +102,61 @@ function ltext() {
 function wonLost() {
     if (numToGuess === currentScore && timer === true) {
         console.log('YOU WIN!');
+        $('#numToGuess').css("border", "1px dotted green");
+        $('#numToGuess').css("color", "green");
         win++;
         wtext();
         reset();
+        alert("YOU WERE SUCCESSFUL. Click start to play again!");
     } else if (numToGuess < currentScore && timer === true) {
         console.log('YOU LOSE!');
+        $('#currentScore').css("border", "1px dotted #cf3d39");
+        $('#currentScore').css("color", "#cf3d39");
         lose++;
         ltext();
         reset();
+        alert("Sorry... You failed. Click start to play again!");
     };
     
 
 };
 
 $('#btnOne').click(function(){
+if (timer === true) {
 console.log('BLUE BUTTON CLICKED')
 blue();
-wonLost()
+wonLost();
+};
 });
 
 $('#btnTwo').click(function(){
+if (timer === true) {
 console.log('GREEN BUTTON CLICKED')
 green();
-wonLost()
+wonLost();
+};
 });
 
 $('#btnThree').click(function(){
+if (timer === true) {
 console.log('RED BUTTON CLICKED')
 red();
-wonLost()
+wonLost();
+};
 });
 
 $('#btnFour').click(function(){
+if (timer === true) {
 console.log('YELLOW BUTTON CLICKED')
 yellow();
-wonLost()
+wonLost();
+};
 });
 
 $('#startBtn').click(function(){
 console.log('START BUTTON CLICKED')
 start();
+});
+
+// -----------------------------------------end--------------------------------------- \\
 });
