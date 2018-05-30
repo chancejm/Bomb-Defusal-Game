@@ -4,7 +4,7 @@ $( document ).ready(function() {
 // -----------------------------------------start--------------------------------------- \\
 let countdown = false;
 let timer = false;
-let time = ""
+let time;
 let numToGuess = 0;
 let currentScore = 0;
 let blueBtn = 0;                //Variables Used
@@ -13,6 +13,8 @@ let redBtn = 0;
 let yellowBtn = 0;
 let win = 0;
 let lose = 0;
+let min = 0;
+let sec = 0;
 
 function start() {          //_This start function is to be called when startBtn is clicked.
     if(timer === false) {//_If timer is equal to Flase then, the following below.
@@ -20,7 +22,9 @@ function start() {          //_This start function is to be called when startBtn
     blueBtn= Math.floor(Math.random()*12+1);//--------------//
     greenBtn= Math.floor(Math.random()*12+1);               //
     redBtn= Math.floor(Math.random()*12+1);                 // Sets all btn values
-    yellowBtn= Math.floor(Math.random()*12+1);//------------//          
+    yellowBtn= Math.floor(Math.random()*12+1);//------------//
+    min = 1;
+    sec = 31;
     if (numToGuess < 100) {//-------------------------------//
     $('#numToGuess').html('0'+numToGuess);                  // Changes numToGuess text to display the value
     } else {                                                // Also keeps numToGuess display triple digit
@@ -37,20 +41,57 @@ function start() {          //_This start function is to be called when startBtn
     console.log(redBtn);
     console.log(yellowBtn);
     timer = true;//_timer is set to true from its original false value so that start button can not reset values until win/lose condition has been met.
-    }
+    timeStart();
+    };
 };
 
 function reset() {      //_This reset function is to be called when a win/lose condition has been met
  countdown = false;     //-Function resets all values to 0/""/false until start button is pressed again & all values are randomly assigned again
  timer = false;
- time = "";
+ time;
  numToGuess = 0;
  currentScore = 0;
  blueBtn = 0;
  greenBtn = 0;
  redBtn = 0;
  yellowBtn = 0;
-}
+};
+
+//
+
+function mainTime() {
+    if(sec < 1 && min === 1) {
+        sec = 60;
+        min = 0;    
+    };
+
+    sec--;
+    
+    if(sec < 10) {
+        $('#timer').html('0'+min+':0'+sec);
+        console.log('0'+min+':0'+sec);
+    } else {
+        $('#timer').html('0'+min+':'+sec);
+        console.log('0'+min+':'+sec);
+    };
+
+    if (sec === 0 && min === 0) {
+    clearInterval(time);
+    lose++;
+    $('#currentScore').css("border", "1px dotted #cf3d39");        
+    $('#currentScore').css("color", "#cf3d39");                     
+    ltext();                                                        
+    reset();                                                        
+    alert("Sorry... You failed. Click start to play again!");
+    console.log(timer);
+    };
+};
+
+function timeStart() {
+    time = setInterval(mainTime, 1000);
+};
+
+//
 
 function blue() {                               //_This function is to be called when the blue button is clicked
     currentScore = blueBtn + currentScore;//_ Adds the value of bluBtn to currentScore
@@ -103,6 +144,7 @@ function ltext() {
 function wonLost() {
     if (numToGuess === currentScore && timer === true) {//--------------//
         console.log('YOU WIN!');                                        //
+        clearInterval(time);                                            //
         $('#numToGuess').css("border", "1px dotted green");             //
         $('#numToGuess').css("color", "green");                         // - If player wins changes color of numToGuess display to green & alerts player that they have won.
         win++;                                                          // - Also resets variables to starting values (0,false,"" etc..) & adds 1 to win variable & prints value to win display.
@@ -111,6 +153,7 @@ function wonLost() {
         alert("YOU WERE SUCCESSFUL. Click start to play again!");//-----//  
     } else if (numToGuess < currentScore && timer === true) {//---------//
         console.log('YOU LOSE!');                                       //
+        clearInterval(time);                                            //
         $('#currentScore').css("border", "1px dotted #cf3d39");         //
         $('#currentScore').css("color", "#cf3d39");                     // - If player loses changes color of current score display to red & alerts player that they have lost
         lose++;                                                         // - Also resets variables to starting values (0,false,"" etc..) & adds 1 to lose variable & prints value to lose display.
