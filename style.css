@@ -1,5 +1,6 @@
 html{
     background:black;
+    
 }
 
 .container-fluid{
@@ -7,12 +8,15 @@ html{
     color: white;
     font-size: 1.6vmin;
     font-family: 'Orbitron', sans-serif;
+    
+    
 
 }
 /* div{
     border: 1px dotted forestgreen;
 } */
 header{
+    font-size: 1.3vw;
     color: white;
     background: black;
     text-align: center;
@@ -21,15 +25,41 @@ footer{
     color: white;
     background: black;
     text-align: center;
+    font-size: 1.5vw;
 }
 bombImg{
     position: relative;
+
+}
+#main{
+    max-width: 68%;
+    max-height: 50%;
 }
 #intro{
     background: black;
     font-size: 18px;
-    color: #cf3d39;
+    color: white;
 
+}
+
+#bonusBtn{
+    position: absolute;
+    background: grey;
+    text-align: center;
+    font-size: 2vw;
+    top: 6%;
+    left: 88%;
+    height: 13%;
+    width: 15%;
+    border-top: 2px dotted green;
+    border-left: 2px dotted green;
+    border-bottom: 2px dotted #cf3d39;
+    border-right: 2px dotted #cf3d39;
+    visibility: hidden;
+    /* top: 51.5%;
+    left: 42%;
+    height: 10%;
+    width: 16%; */
 }
 
 #startBtn{
@@ -40,7 +70,7 @@ bombImg{
     top: 12%;
     left: 3%;
     height: 7%;
-    width: 9%;
+    width: 11%;
     /* top: 51.5%;
     left: 42%;
     height: 10%;
@@ -50,7 +80,7 @@ bombImg{
     position: absolute;
     background: black;
     top: 88%;
-    left: 8%;
+    left: 4%;
     color: green;
     border: 1px dotted green;
     font-size: 2vw;
@@ -90,7 +120,7 @@ bombImg{
     width: 14%;
 }
 #timer{
-    font-size: 2.2vw;
+    font-size: 2vw;
     text-align: center;
     color: #cf3d39;
     border: 1px solid black;
