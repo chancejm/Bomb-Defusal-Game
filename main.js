@@ -188,9 +188,9 @@ function wonLost() {
         if (bestTime > recordTime) {
             bestTime = recordTime;
             if (bestTime < 10) {
-            $('#footer').html('|| Fastest Diffusal Time: 00:0'+bestTime+' ||');
+            $('#footer').html('|| Fastest Defusal Time: 00:0'+bestTime+' ||');
             } else {
-            $('#footer').html('|| Fastest Diffusal Time: 00:'+bestTime+' ||');
+            $('#footer').html('|| Fastest Defusal Time: 00:'+bestTime+' ||');
             };
         };
         wtext();                                                        //
