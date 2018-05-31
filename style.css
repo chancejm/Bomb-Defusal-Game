@@ -32,7 +32,7 @@ bombImg{
 
 }
 #main{
-    max-width: 68%;
+    max-width: 66%;
     max-height: 50%;
 }
 #intro{
@@ -79,27 +79,31 @@ bombImg{
 #win{
     position: absolute;
     background: black;
+    text-align: center;
     top: 88%;
-    left: 4%;
+    left: 3%;
     color: green;
     border: 1px dotted green;
     font-size: 2vw;
     box-shadow: 3px 3px green;
+    width: 20%;
 }
 #lose{
     position: absolute;
     background: black;
+    text-align: center;
     top: 88%;
-    left: 82%;
+    left: 76.3%;
     color: #cf3d39;
     border: 1px dotted #cf3d39;
     font-size: 2vw;
     box-shadow: 3px 3px #cf3d39;
+    width: 20%;
 }
 #numToGuess{
     position: absolute;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.8vw;
     color: #cf3d39;
     background: black;
     top: 51.5%;
